@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX_NOTES</title>
+    <link rel="stylesheet" href="ExternalFiles/HTMLstyles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="HTML_NOTES.htm" target="_blank">HTML Note</a>
+        <a href="CSS_NOTES.htm" target="_blank">CSS Note</a>
+        <a href="JSCRIPT_NOTES.htm" target="_blank">JavaScript Note</a>
+        <a href="JQUERY_NOTES.htm" target="_blank">JQuery Note</a>
+        <a href="AJAX_NOTES.htm" target="_blank">Ajax Note</a>
+        <a href="PHP_NOTES.htm" target="_blank">PHP Note</a>
+        <a href="MYSQL_NOTES.htm" target="_blank">MySql Note</a>
+    </nav>
+    <h1> AJAX INTRODUCTION</h1>
+    <code>&ltscript src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script></code>
+
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                $.ajax({
+                    url: 'case_1.html',
+                    data: {
+                        oper: 'query',
+                    },
+                    type: 'POST',
+                    dataType: 'text', //json,html...
+                    success: function (JData) {
+                        $("#div1").html(JData);
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <div id="div1"></div>
+    <button type="button" id="btn">Ajax傳送接收</button>
+
+</body>
+
+</html>
