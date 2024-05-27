@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSCRIPT_NOTES</title>
+    <link rel="stylesheet" href="ExternalFiles/HTMLstyles.css">
+    <script src="ExternalFiles/JSNoteStart.js"></script>
+</head>
+
+<body>
+    <ul class="nav1">
+        <li class="nav2"><a href="HTML_NOTES.htm" target="_blank">HTML</a></li>
+        <li class="nav2"><a href="CSS_NOTES.htm" target="_blank">CSS</a></li>
+        <li class="nav2"><a href="BOOTSTRAP_NOTES.html" target="_blank">Bootstrap</a></li>
+        <li class="nav2"><a href="JSCRIPT_NOTES.htm" target="_blank">JavaScript</a></li>
+        <li class="nav2"><a href="JQUERY_NOTES.htm" target="_blank">JQuery</a></li>
+        <li class="nav2"><a href="AJAX_NOTES.htm" target="_blank">Ajax</a></li>
+        <li class="nav2"><a href="PHP_NOTES.htm" target="_blank">PHP</a></li>
+        <li class="nav2"><a href="MYSQL_NOTES.htm" target="_blank">MySql</a></li>
+    </ul>
+    <p><i>Source: <a href="https://www.w3schools.com/js"
+                class="text-decoration-none px-2">https://www.w3schools.com/js</a></i> </p>
+    <p><i>Reference: <a href="https://www.w3schools.com/jsref/default.asp"
+                class="text-decoration-none px-2">https://www.w3schools.com/jsref/default.asp</a></i> </p>
+
+    <h1> JAVASCRIPT INTRODUCTION</h1>
+    <p>Javascript use (.js) as file extension or javascript must be declared in <code>script</code> tag or imported as
+        .js file</p>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Syntax</th>
+            <th>Description / Examples</th>
+        </tr>
+        <tr>
+            <td class="table_category" colspan="3">General</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Script Tag</td>
+            <td><code>&ltscript src="filename.js"&gt&lt/script&gt</code></td>
+            <td>Import JS file</td>
+        </tr>
+        <tr>
+            <td colspan="2">JS have top-to-down sequence to run the code. If a tag/id/class is declared after the JS
+                function, it will not work. In this webpage, JSNoteStart.js and JSNoteEnd.js is used to solve the
+                problem by importing the script from top/bottom depending of the function</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Event</td>
+            <td>eventName = " function "</td>
+            <td>Can be declared as tag attribute or at JS<input type="button" onclick="alert('onclick trigger')"
+                    size="100px" value="onclick event"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                onchange: An HTML element has been changed <br>
+                onclick: The user clicks an HTML element <br>
+                onmouseover: The user moves the mouse over an HTML element <br>
+                onmouseout: The user moves the mouse away from an HTML element <br>
+                onkeydown: The user pushes a keyboard key <br>
+                onload: The browser has finished loading the page
+            </td>
+
+        </tr>
+        <tr>
+            <td rowspan="3">Variable</td>
+            <td>var i = 0; var = "str"; var = ['A','B']</td>
+            <td>Variable type is automatically set. Var is a global variable</td>
+        </tr>
+        <tr>
+            <td>let x; let y = object</td>
+            <td>Newer version of var, have block scope</td>
+        </tr>
+        <tr>
+            <td>
+                const PI = 3.14; <br>
+                const arr = ['A','B'] <br>
+                PI = 2; // Illegal <br>
+                arr[0] = 'C'; // Legal
+            </td>
+            <td>SImilar to let. Defines a constant reference to a value. We cannot change the reference location but we
+                can change the value of the refered value</td>
+        </tr>
+        <tr>
+            <td>Datatypes</td>
+            <td colspan="2">String, Number(64-bit float), Bigint(Bigger than number), Boolean, Undefined, Null, Symbol.
+                Object Type: Object, Array Object, Date Object. Use the keyword new to declare as object</td>
+        </tr>
+        <tr>
+            <td>String</td>
+            <td colspan="2">
+                <a href="https://www.w3schools.com/jsref/jsref_obj_string.asp">Complete String Reference</a><br>
+                String.length;
+            </td>
+        </tr>
+        <tr>
+            <td>Number</td>
+            <td colspan="2">
+                <a href="https://www.w3schools.com/jsref/jsref_obj_number.asp">Complete Number Reference</a> <br>
+                Number.toString(); // Convert number to string <br>
+                GlobalJavaScriptMethod.Number(object) // Returns a number converted from its argument <br>
+                Number.parseFloat(); // Convert string argument and returns a floating point number <br>
+                Number.parseInt(); // Convert string argument and returns a whole number
+
+            </td>
+        </tr>
+        <tr>
+            <td>Array</td>
+            <td colspan="2">
+                Array.length; <br>
+                Array.forEach(function); <br>
+                Array.push(); <br>
+                Use numbered indexes
+            </td>
+        </tr>
+        <tr>
+            <td>Object Datatype</td>
+            <td>
+                objectName.propertyName or objectName["propertyName"] <br>
+                Can be accessed similar to Array, but it use named indexes
+            </td>
+            <td>const person = { firstName: "A", lastName : "B", id : 123, fullName: function() {return this.firstName +
+                " " + this.lastName;}
+                }
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="9">Date</td>
+            <td colspan="2">Zero time is January 01, 1970 00:00:00 UTC. <br>
+                One day (24 hours) is 86 400 000 milliseconds <br>
+                Default date output:
+            </td>
+        </tr>
+        <tr>
+            <td>
+                const d = new Date(year,month,day,hours,minutes,seconds,ms)
+            </td>
+            <td>Date Declaration</td>
+        </tr>
+        <tr>
+            <td>const d = new Date("YYYY-MM-DD");</td>
+            <td>ISO Date</td>
+        </tr>
+        <tr>
+            <td>const d = new Date("MM/DD/YYYY");</td>
+            <td>Short Date</td>
+        </tr>
+        <tr>
+            <td>const d = new Date("Jan DD YYYY");</td>
+            <td>Long Date</td>
+        </tr>
+        <tr>
+            <td>Date.toDateString();</td>
+            <td id="currentTime">(Default) </td>
+        </tr>
+        <tr>
+            <td>Date.toUTCString();</td>
+            <td id="currentTimeUTC"></td>
+        </tr>
+        <tr>
+            <td>Date.toISOString();</td>
+            <td id="currentTimeISO"></td>
+        </tr>
+        <tr>
+            <td>Date.parse(Date);</td>
+            <td>Convert date to milliseconds</td>
+        </tr>
+        <tr>
+            <td>typeof operator</td>
+            <td>var v = typeof object;</td>
+            <td>Returns the type of a variable</td>
+        </tr>
+        <tr>
+            <td>instanceof </td>
+            <td>Obj1.instanceof(object);</td>
+            <td>Returns true if an object is an instance of an object type</td>
+        </tr>
+        <tr>
+            <td rowspan="8">Math</td>
+            <td colspan="2"><a href="https://www.w3schools.com/jsref/jsref_obj_math.asp">Complete Math Object
+                    Reference</a></td>
+        </tr>
+        <tr>
+            <td>Math.round(x)
+            <td>Returns x rounded to its nearest integer</td>
+        </tr>
+        <tr>
+            <td>Math.ceil(x)</td>
+            <td>Returns x rounded up to its nearest integer</td>
+        </tr>
+        <tr>
+            <td>Math.floor(x)</td>
+            <td>Returns x rounded down to its nearest integer</td>
+        </tr>
+        <tr>
+            <td>Math.trunc(x)</td>
+            <td>Returns the integer part of x</td>
+        </tr>
+        <tr>
+            <td>Math.pow(x, y)</td>
+            <td>Returns the value of x to the power of y</td>
+        </tr>
+        <tr>
+            <td>Math.random()</td>
+            <td>Returns a random number between 0 (inclusive), and 1 (exclusive)</td>
+        </tr>
+        <tr>
+            <td>Math.floor(Math.random() * (max - min) ) + min;</td>
+            <td>Returns a random integer from min to max</td>
+        </tr>
+        <tr>
+            <td>Nullish Coalescing Operator</td>
+            <td>result = name ?? text;</td>
+            <td>The ?? operator returns the first argument if it is not null or undefined. Otherwise it returns the
+                second argument</td>
+        </tr>
+        <tr>
+            <td>Optional Chaining Operator</td>
+            <td>document.getElementById("demo").innerHTML = car?.name;</td>
+            <td>The ?. operator returns undefined if an object is undefined or null (instead of throwing an error).</td>
+        </tr>
+        <tr>
+            <td>For In Loop</td>
+            <td>for (key in object) { // code block to be executed }</td>
+            <td>text += object[key] will add up the object data in random sequence</td>
+        </tr>
+        <tr>
+            <td>For Each Loop</td>
+            <td>Array.forEach(myFunction); <br>
+                function myFunction(value, index, array) { txt += value;}</td>
+            <td>The forEach() method calls a function (a callback function) once for each array element.</td>
+        </tr>
+        <tr>
+            <td>For Of Loop</td>
+            <td>for (variable of iterable) { ... }</td>
+            <td>The JavaScript for of statement loops through the values of an iterable object such as Arrays, Strings,
+                Maps, NodeLists, and more</td>
+        </tr>
+        <tr>
+            <td rowspan="4">Sets</td>
+            <td>const letters = new Set(["a","b","c"]);</td>
+            <td>Pass an Array to the new Set() constructor</td>
+        </tr>
+        <tr>
+            <td>Set.add(object);</td>
+            <td>Adds a new element to the Set</td>
+        </tr>
+        <tr>
+            <td>Set.delete();</td>
+            <td>Removes an element from a Set</td>
+        </tr>
+        <tr>
+            <td>Set.values(); <br>
+                for (const x of letters.values()) { ... }</td>
+            <td>Returns an iterator with all the values in a Set</td>
+        </tr>
+        <tr>
+            <td>Set.has();</td>
+            <td>Returns true if a value exists in the Set</td>
+        </tr>
+        <tr>
+            <td>Set.forEach( function(value) { ... })</td>
+            <td>The forEach() method invokes (calls) a function for each Set element</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <!--  -->
+        <tr>
+            <td class="table_category" colspan="3">Selection</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Selection Function</td>
+            <td>getElementsByTagName('tagname')</td>
+            <td>Access by Tag</td>
+        </tr>
+        <tr>
+            <td>getElementById('id')</td>
+            <td>Access by ID</td>
+        </tr>
+        <tr>
+            <td>getElementByName('name')</td>
+            <td>Access by Name</td>
+        </tr>
+        <tr>
+            <td>A Simple Implementation</td>
+            <td>
+                1. <code>&ltselect name="select" onchange="change_sel()"></code><br>
+                2.
+                <code>&ltinput type="button" value="clear" onclick="getElementById('text1').value=''"></code>
+            </td>
+            <td>
+                1. <select name="select1" onchange="change_sel()">
+                    <option value="A">A</option>
+                    <option value="B">B </option>
+                    <option value="C">C </option>
+                </select><br>
+                2.
+                <input type="text" value="A" id="text1" size="10">
+                <input type="button" value="clear" onclick="getElementById('text1').value=''">
+            </td>
+        </tr>
+        <tr>
+            <td>Attribute Access</td>
+            <td>.attribute_name</td>
+            <td>Change or add the attribute property of a tag</td>
+        </tr>
+        <tr>
+            <td>CSS Access</td>
+            <td>.style.properties</td>
+            <td>Change or add the CSS property of a tag</td>
+        </tr>
+        <tr>
+            <td>innerHTML</td>
+            <td>document.getElementById("id").innerHTML = "...";</td>
+            <td>Can use operator += to append HTML</td>
+        </tr>
+        <tr>
+            <td>write</td>
+            <td>document.write("...");</td>
+            <td>Overwrite all HTML, cannot append HTML like innerHTML</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!--  -->
+        <tr>
+            <td class="table_category" colspan="3">Functions</td>
+        </tr>
+
+        <tr>
+            <td>Function Declaration</td>
+            <td> <code>
+                &ltscript> function fun_name(parameters){...} &lt/script>
+            </code></td>
+            <td>Javascript function declaration. The syntax is similar to Java</td>
+        </tr>
+        <tr>
+            <td>Function runs at Start</td>
+            <td>function start() { document.write("Hello"); } <br>
+                start();</td>
+            <td>A function that run automatically when called by start();</td>
+        </tr>
+        <tr>
+            <td>Alert, Confirm, Prompt Function</td>
+            <td>alert('message'), confirm('message'), prompt('message')</td>
+            <td>
+                <input type="button" value="alert" onclick="alert('alert');">
+                <input type="button" value="confirm" onclick="confirm('confirm');">
+                <input type="button" value="prompt" onclick="prompt('prompt');">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <h1>FORM USING JAVASCRIPT(AJAX)</h1>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function ($) {
+            $("#form1").submit(function () {
+
+                document.getElementsByTagName('body').sty
+
+                var message = "";
+                var id_check = /[^a-zA-Z0-9]/g;
+                var mail_check = /.+@.+\..+/;
+                var account = $("#account").val();
+                // Check Account
+                if (account == "")
+                    message = "Account empty";
+                else if (account.indexOf(' ') >= 0)
+                    message = "Account cannot have empty space";
+                else if (account.length < 6 || account.length > 12)
+                    message = "Account length must be 6-12 characters long";
+                else if (account.match(id_check))
+                    message = "Account only can have alphabet or numbers";
+
+                if (message) {
+                    $("#message").html(message);
+                    $("#account").focus();
+                    return false;
+                }
+                // Check Password
+                if ($("#pwd").val().length < 6 || $("#pwd").val().length > 12) {
+                    $("#message").html("Password length must be 6-12 characters long");
+                    $("#pwd").focus();
+                    return false;
+                }
+                if ($("#pwd").val() != $("#pwd2").val()) {
+                    $("#message").html("Passwords are different");
+                    $("#pwd2").focus();
+                    return false;
+                }
+                // Check Email
+                if (!$("#email").val().match(mail_check)) {
+                    $("#message").html("E-mail format error");
+                    $("#email").focus();
+                    return false;
+                }
+                // Check Radio
+                if (!$("input:radio[name=gender]").is(":checked")) {
+                    $("#message").html("Choose gender");
+                    $("#gender").focus();
+                    return false;
+                }
+                // Check Checkbox
+                var cnt_type = $("input:checkbox:checked[name='type[]']").length;
+                if (cnt_type < 2 || cnt_type > 3) {
+                    $("#message").html("Pick only 2 or 3 type");
+                    return false;
+                }
+                // Check Select
+                if ($('#sel').val() == 0 || $('#sel :selected').text() == "") {
+                    $("#message").html("Choose sel");
+                    return false;
+                }
+                // Check Agree
+                if ($("input:checkbox:checked[name='agree']").length == 0) {
+                    $("#message").html("Agree?");
+                    return false;
+                }
+                alert("submitted");
+            });
+            // Clickall
+            $("#clickAll").click(function () {
+                if ($("#clickAll").prop("checked")) {
+                    $("input[name='type[]']").each(function () {
+                        $(this).prop("checked", true);
+                    });
+                } else {
+                    $("input[name='type[]']").each(function () {
+                        $(this).prop("checked", false);
+                    });
+                }
+            });
+        });
+    </script>
+
+    <form role="form" id="form1">
+        <table>
+            <tr>
+                <th>Example</th>
+                <th>Code</th>
+            </tr>
+            <tr>
+                <td colspan="2"><code>
+                    &ltscript src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">&lt/script>
+                </code></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="account">Account</label>
+                    <input type="text" id="account" name="account" placeholder="6-10 Characters">
+                </td>
+                <td>
+                    var id_check = /[^a-zA-Z0-9]/g;<br>
+                    if (account == "") message = "...";<br>
+                    else if (account.indexOf(' ') >= 0) message = "...";<br>
+                    else if (account.length < 6 || account.length> 12) message = "";<br>
+                        else if (account.match(id_check)) message = "";<br>
+                        if (message) { $("#message").html(message); $("#account").focus(); return false; }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Password</label>
+                    <input type="password" id="pwd" name="pwd" placeholder="6-12 Characters">
+                </td>
+                <td>
+                    if ($("#pwd").val().length < 6 || $("#pwd").val().length> 12) { $("#message").html("..");
+                        $("#pwd").focus(); return false; }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Confirm Password</label>
+                    <input type="password" id="pwd2" name="pwd2" placeholder="">
+                </td>
+                <td>
+                    if ($("#pwd").val() != $("#pwd2").val()) { $("#message").html("...");
+                    $("#pwd2").focus(); return false; }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>E-mail</label>
+                    <input type="text" id="email" name="email" placeholder="">
+                </td>
+                <td>
+                    if (!$("#email").val().match(mail_check)) { $("#message").html("...");
+                    $("#email").focus(); return false; }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Gender</label>
+                    <input type="radio" id="gender1" name="gender">M
+                    <input type="radio" id="gender2" name="gender">F
+                </td>
+                <td>
+                    if (!$("input:radio[name=gender]").is(":checked")) { $("#message").html("...");
+                    $("#gender").focus(); return false; }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Type</label>
+                    <input type="checkbox" class=" type_group" name="type[]">A
+                    <input type="checkbox" class=" type_group" name="type[]">B
+                    <input type="checkbox" class=" type_group" name="type[]">C
+                    <input type="checkbox" class=" type_group" name="type[]">D
+                    <label for="type_4" class="error">
+                </td>
+                <td>
+                    var cnt_type = $("input:checkbox:checked[name='type[]']").length; <br>
+                    if (cnt_type < 2 || cnt_type> 3) { $("#message").html("..."); return false; }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input name="clickAll" id="clickAll" type="checkbox">Select All Type
+                </td>
+                <td>
+                    $("#clickAll").click(function () { <br>
+                    if ($("#clickAll").prop("checked")) { $("input[name='type[]']").each(function () {
+                    $(this).prop("checked", true); }); } <br>
+                    else { $("input[name='type[]']").each(function () { $(this).prop("checked", false); }); } <br>
+                    });
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Select</label>
+                    <select name="sel" id="sel">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <label for="sel" class="error">
+                </td>
+                <td>
+                    if ($('#sel').val() == 0 || $('#sel:selected').text() == "") { $("#message").html("..."); return
+                    false; }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="agree" name="agree">I Agree
+                    <label class="error" for="agree"></label>
+                </td>
+                <td>
+                    if ($("input:checkbox:checked[name='agree']").length == 0) { $("#message").html("..."); return
+                    false; }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                </td>
+                <td>
+                    $(document).ready(function ($) {
+                    $("#form1").submit(function () {
+                    ...(Code Starts Here)...;
+                    alert("submitted");
+                    });
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="warning" id="message"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Note: Remove the required property on the declaration</td>
+            </tr>
+        </table>
+    </form>
+
+    <h1>JAVASCRIPT REGULAR EXPRESSION</h1>
+
+</body>
+
+<script src="ExternalFiles/JSNoteEnd.js"></script>
+
+</html>

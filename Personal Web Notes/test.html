@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+    <!--additional method - for checkbox .. ,require_from_group method ...-->
+    <script src="https://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+
+    <script>
+        $(document).ready(function ($) {
+            $("#form2").validate({
+                submitHandler: function (form) {
+                    form.submit();
+                },
+                rules: {
+                    // Checkbox of class cb_group named cb_1, ...
+                    cb_1: {
+                        require_from_group: [1, ".cb_group"]
+                    },
+                    cb_2: {
+                        require_from_group: [1, ".cb_group"]
+                    },
+                    cb_3: {
+                        require_from_group: [1, ".cb_group"]
+                    },
+                    // Checkbox of same name
+                    "hobby[]": {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 3
+                    },
+                    // Radiobox of name type
+                    type: {
+                        required: true
+                    },
+                    // Password check
+                    pwd2: {
+                        equalTo: "#pwd"
+                    },
+                    // Textbox of name textbox, linkaddr, content
+                    textbox: {
+                        required: true
+                    },
+                    linkaddr: {
+                        required: true,
+                        url: true
+                    },
+                    // Textarea of name content
+                    content: {
+                        required: true
+                    },
+                    // Select
+                    select4: {
+                        required: true,
+                        notEqualTo: "0"
+                    }
+                },
+                messages: {
+                    cb_1: {
+                        require_from_group: ""
+                    },
+                    cb_2: {
+                        require_from_group: ""
+                    },
+                    cb_3: {
+                        require_from_group: "Choose at least one"
+                    }
+                }
+            });
+        });
+    </script>
+
+    <form id="form2">
+        <table>
+            <tr>
+                <th>
+                    Example
+                </th>
+                <th>
+                    Code
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input name="cb_1" class="cb_group" type="checkbox" value="1">1
+                    <input name="cb_2" class="cb_group" type="checkbox" value="2">2
+                    <input name="cb_3" class="cb_group" type="checkbox" value="3">3
+                    <label for="cb_3" class="error">
+                </td>
+                <td>
+                    rules: { <br>
+                    cb_1: { require_from_group: [1, ".cb_group"] }, <br>
+                    cb_2: { require_from_group: [1, ".cb_group"] }, <br>
+                    cb_3: { require_from_group: [1, ".cb_group"] }, } <br>
+                    messages: { <br>
+                    cb_1: { require_from_group: "" }, <br>
+                    cb_2: { require_from_group: "" }, <br>
+                    cb_3: { require_from_group: "..." } }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input name="hobby[]" type="checkbox" value="4">4
+                    <input name="hobby[]" type="checkbox" value="5">5
+                    <input name="hobby[]" type="checkbox" value="6">6
+                    <input id = "hobby1" name="hobby[]" type="checkbox" value="7">7
+                    <label for="hobby1" class="error">
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="type" value="1">A
+                    <input type="radio" name="type" value="2">B
+                    <input type="radio" name="type" value="3">C
+                    <label for="type" class="error">
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" name="textbox" id="textbox" placeholder="Textbox"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="linkaddr" id="linkaddr" placeholder="Link"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="password" name="pwd" id="pwd" placeholder="Password"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="password" name="pwd2" id="pwd2" placeholder="Confirm Password"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><textarea name="content" id="textarea" rows="5" cols="20"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="select4" size="1">
+                        <option value="0" selected> - </option>
+                        <option value="1"> 1 </option>
+                        <option value="2"> 2 </option>
+                        <option value="3"> 3 </option>
+                        <option value="4"> 4 </option>
+                        <option value="5"> 5 </option>
+                        <option value="6"> 6 </option>
+                        <option value="7"> 7 </option>
+                        <option value="8"> 8 </option>
+                        <option value="9"> 9 </option>
+                        <option value="10"> 10 </option>
+                        <option value="11"> 11 </option>
+                        <option value="12"> 12 </option>
+                    </select>Number
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="middle">
+                    <input type="submit" size="20" value="Submit">
+                    <input type="reset" size="20" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
